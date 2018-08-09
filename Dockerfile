@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3.4-alpine
 
 WORKDIR /app
 ADD requirements.txt /app/
@@ -8,3 +8,5 @@ USER app
 
 ENV PATH "/app:$PATH"
 ADD . /app/
+ENTRYPOINT ["sublist3r.py"]
+CMD ["-h"]
